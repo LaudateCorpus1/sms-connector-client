@@ -5,4 +5,4 @@ services:
   - docker
 
 script:
-  - docker run --rm -v $TRAVIS_BUILD_DIR:/build -w=/build/src/Avast.SmsConnectorClient microsoft/aspnet:1.0.0-rc1-update1 dnu restore && dnu build && dnu pack
+  - docker run --rm -v $TRAVIS_BUILD_DIR:/build -w=/build/src/Avast.SmsConnectorClient microsoft/aspnet:1.0.0-rc1-update1 /bin/bash -c "dnu restore && dnu build && dnu pack"
