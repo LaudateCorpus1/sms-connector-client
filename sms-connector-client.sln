@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1A3B74CA-A761-490E-B100-D74806A71D49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AC2CB6D1-0781-4187-9553-1DB2556076F7}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Avast.SmsConnectorClient", "src\Avast.SmsConnectorClient\Avast.SmsConnectorClient.xproj", "{93E66C64-740D-4B4C-A351-30EDD21E5768}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93E66C64-740D-4B4C-A351-30EDD21E5768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E66C64-740D-4B4C-A351-30EDD21E5768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E66C64-740D-4B4C-A351-30EDD21E5768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E66C64-740D-4B4C-A351-30EDD21E5768}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93E66C64-740D-4B4C-A351-30EDD21E5768} = {1A3B74CA-A761-490E-B100-D74806A71D49}
+	EndGlobalSection
+EndGlobal

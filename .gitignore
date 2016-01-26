@@ -1,0 +1,42 @@
+# Thumbnails created by Windows
+Thumbs.db
+
+# Git merging files 
+*.orig 
+
+# Visual Studio
+*.[oO]bj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.sdf
+*.tlb
+*.tlh
+*.bak
+*.[cC]ache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+[Oo]bj/
+[Rr]elease*/
+_ReSharper*/
+*.resharperoptions
+*.Resharper
+App_Data
+*.Publish.xml 
+[Tt]est[Rr]esult*
+*.opensdf
+packages/
+artifacts
+.vs
+project.lock.json
