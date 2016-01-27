@@ -4,5 +4,11 @@ sudo: required
 services:
   - docker
 
+env:
+  - BASE_DIR=/build/src/Avast.SmsConnectorClient
+
 script:
-  - docker run --rm -v $TRAVIS_BUILD_DIR:/build -e DNX_BUILD_VERSION=build$TRAVIS_BUILD_NUMBER -w=/build/src/Avast.SmsConnectorClient microsoft/aspnet:1.0.0-rc1-update1 /bin/bash -c "dnu restore && dnu pack"
+  - docker run --rm -v $TRAVIS_BUILD_DIR:/build -e DNX_BUILD_VERSION=build$TRAVIS_BUILD_NUMBER -w=$BASE_DIR microsoft/aspnet:1.0.0-rc1-update1 /bin/bash -c "dnu restore && dnu pack --configuration Release"
+
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && test $TRAVIS_REPO_SLUG == "avast/sms-connector-client" && docker run --rm -v $TRAVIS_BUILD_DIR:/build -w=$BASE_DIR microsoft/aspnet:1.0.0-rc1-update1 /bin/bash -c "nuget push bin/Release/*.nupkg -ApiKey=$NUGET_API_KEY -NonInteractive"
