@@ -43,7 +43,7 @@ namespace Avast.SmsConnectorClient
 
             var url = ComposeUrl(message);
 
-#if NET451
+#if NET45
             var messageHandler = new WebRequestHandler();
             messageHandler.ClientCertificates.Add(SmsConnectorConfiguration.Certificate);
 #else
