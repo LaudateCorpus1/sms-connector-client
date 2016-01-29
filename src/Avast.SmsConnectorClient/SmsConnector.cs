@@ -65,7 +65,8 @@ namespace Avast.SmsConnectorClient
                 "https://smsconnector.cz.o2.com/smsconnector/getpost/GP?action=send&baID={0}&toNumber={1}&text={2}&intruder=FALSE&multipart={3}&deliveryReport=FALSE&validityPeriod=10000&priority=1";
 
             var baId = WebUtility.UrlEncode(SmsConnectorConfiguration.ApplicationId);
-            var phoneNumber = WebUtility.UrlEncode(message.PhoneNumber);
+
+            var phoneNumber = WebUtility.UrlEncode(message.PhoneNumber.FullPhoneNumberWithNormalizedPrefix);
             var messageText = WebUtility.UrlEncode(message.Text);
             var multipart = message.Multipart.ToString();
 
