@@ -2,9 +2,9 @@
   "version": "1.0.0-*",
   "description": "Avast.SmsConnectorClient Class Library",
   "authors": [ "Avast Software" ],
-  "tags": [ "o2", "sms" ],
+  "tags": [ "o2", "sms", "avast" ],
   "projectUrl": "https://github.com/avast/sms-connector-client",
-  "licenseUrl": "",
+  "licenseUrl": "https://github.com/avast/sms-connector-client/blob/master/LICENSE",
   "frameworks": {
     "net45": {
       "frameworkAssemblies": {
