@@ -87,7 +87,7 @@ namespace Avast.SmsConnectorClient
                 var mediaType = response.Content.Headers?.ContentType?.MediaType;
                 if (string.Equals(mediaType, "text/plain"))
                 {
-                    var textResponseBody = await response.Content.ReadAsStringAsync();
+                    var textResponseBody = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                     if (textResponseBody != null)
                     {
                         var detailsToInclude = textResponseBody.Split('\n')
