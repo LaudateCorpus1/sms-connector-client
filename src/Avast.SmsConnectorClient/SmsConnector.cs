@@ -88,19 +88,16 @@ namespace Avast.SmsConnectorClient
                 if (string.Equals(mediaType, "text/plain"))
                 {
                     var textResponseBody = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                    if (textResponseBody != null)
-                    {
-                        var detailsToInclude = textResponseBody.Split('\n')
-                            .Select(s => s.Trim())
-                            .Where(s => s.Length > 0)
-                            .Where(v => ErrorResponseKeysToIncludeInExceptionDetails.Any(key => v.StartsWith(key, StringComparison.OrdinalIgnoreCase)))
-                            .ToList();
+                    var detailsToInclude = textResponseBody?.Split('\n')
+                        .Select(s => s.Trim())
+                        .Where(s => s.Length > 0)
+                        .Where(v => ErrorResponseKeysToIncludeInExceptionDetails.Any(key => v.StartsWith(key, StringComparison.OrdinalIgnoreCase)))
+                        .ToList();
 
-                        if (detailsToInclude.Count > 0)
-                        {
-                            throw new Exception(
-                                $"Received error response from SMS connector ({(int) response.StatusCode} {response.ReasonPhrase}). {string.Join("; ", detailsToInclude)}");
-                        }
+                    if (detailsToInclude?.Count > 0)
+                    {
+                        throw new Exception(
+                            $"Received error response from SMS connector ({(int) response.StatusCode} {response.ReasonPhrase}). {string.Join("; ", detailsToInclude)}");
                     }
                 }
             }

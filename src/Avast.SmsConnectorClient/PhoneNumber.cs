@@ -36,7 +36,7 @@ namespace Avast.SmsConnectorClient
                 if (remainingCharacters.Length == 0 || remainingCharacters.Length > 15 || remainingCharacters.Any(c => !char.IsNumber(c)))
                 {
                     throw new ArgumentException(
-                        $"After the leading {prefix}, the phone number must contain (at least some at and at most 15) numeric characters.");
+                        $"After the leading {prefix}, the phone number must contain (at least some and at most 15) numeric characters.");
                 }
 
                 Prefix = prefix;
@@ -64,11 +64,11 @@ namespace Avast.SmsConnectorClient
         /// <summary>
         /// Phone number without prefix.
         /// </summary>
-        public string PhoneNumberWithoutPrefix { get; set; }
+        public string PhoneNumberWithoutPrefix { get; }
 
         /// <summary>
         /// Phone number with the '+' prefix, regardless of the prefix originally passed to the constructor.
         /// </summary>
-        public string FullPhoneNumberWithNormalizedPrefix { get; set; }
+        public string FullPhoneNumberWithNormalizedPrefix { get; }
     }
 }
